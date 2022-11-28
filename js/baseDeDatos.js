@@ -3,43 +3,43 @@ const baseDeDatos = [
     {
         "id": 1,
         "nombre": "Molida Intermedia",
-        "precio": 699,
+        "precio": "$ 699",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/672125-800-auto?v=637703409949200000&width=800&height=auto&aspect=true"
     },
     {
         "id":2,
         "nombre": "Vino Tetra Arizu",
-        "precio": 199,
+        "precio": "$ 199",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/568693-800-auto?v=637149145148370000&width=800&height=auto&aspect=true"
     },
     {
         "id":3,
         "nombre": "Pure de tomates",
-        "precio": 99,
+        "precio": "$ 99",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/711891-800-auto?v=637943710476600000&width=800&height=auto&aspect=true"
     },
     {
         "id":4,
         "nombre": "Cerveza Stella Astois",
-        "precio": 400,
+        "precio": "$ 400",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/685563-800-auto?v=637786570144800000&width=800&height=auto&aspect=true"
     },
     {
         "id":5,
         "nombre": "Dr Lemon V/Sabores",
-        "precio": 299,
+        "precio": "$ 299",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/199651-800-auto?v=636383613451830000&width=800&height=auto&aspect=true"
     },
     {
         "id":5,
         "nombre": "Dr Lemon V/Sabores",
-        "precio": 299,
+        "precio": "$ 299",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/199651-800-auto?v=636383613451830000&width=800&height=auto&aspect=true"
     },
     {
         "id":5,
         "nombre": "Dr Lemon V/Sabores",
-        "precio": 299,
+        "precio": "$ 299",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/199651-800-auto?v=636383613451830000&width=800&height=auto&aspect=true"
     },
     
@@ -80,7 +80,7 @@ function renderizarProductos() {
         // Boton 
         const miNodoBoton = document.createElement('button');
         miNodoBoton.classList.add('btn', 'btn-primary');
-        miNodoBoton.textContent = '+';
+        miNodoBoton.textContent = '+ Agregar al carrito';
         miNodoBoton.setAttribute('marcador', info.id);
         miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
         // Insertamos
@@ -126,11 +126,11 @@ function renderizarCarrito() {
         }, 0);
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
-        miNodo.classList.add('list-group-item', 'text-right', 'mx-2', 'dropdown-item');
+        miNodo.classList.add('list-group-item', 'text-right', 'mx-5', 'dropdown-item', 'd-flex');
         miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
         // Boton de borrar
         const miBoton = document.createElement('button');
-        miBoton.classList.add('btn', 'btn-danger', 'mx-5', 'dropdown-item');
+        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
         miBoton.textContent = 'X';
         miBoton.style.marginLeft = '1rem';
         miBoton.dataset.item = item;

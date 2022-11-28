@@ -1,0 +1,24 @@
+{
+  "name": "preentrega2martinez",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ch1nolas/PreEntrega2Martinez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ch1nolas/PreEntrega2Martinez/issues"
+  },
+  "homepage": "https://github.com/Ch1nolas/PreEntrega2Martinez#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}

@@ -105,8 +105,12 @@ p {
 
 /** Barra de búsqueda **/
 
+.searchbar-container {
+    display: flex;
+
+}
+
 .bar_search {
-    margin-left:100px;
     width: 600px;
     height: 40px;
     border-top-left-radius: 15px;
@@ -117,13 +121,11 @@ p {
 .button_search {
     width: 50px;
     height: 40px;
-    margin: -3px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border-style: none;
     background-color: #4555A3;
     color: white;
-    margin-right: 80px;
 }
 
 /** Carrousel **/
@@ -653,22 +655,32 @@ ul {
     #navbar {
         margin-left: 0;
         margin-top: 10px;
+        padding: 0;
+    }
+    #navbar li {
+        font-size: 14px;
+        align-items: center;
     }
     #navbar li a {
         font-size: 13px;
         padding: 5px 0;
     }
+    .searchbar-container {
+        display: flex;
+        order: 5;
+    }
     .bar_search {
         
         width: 185px;
         height: 25px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
         margin-left: 0;
 
     }
     .bar_search::placeholder {
+        align-items: center;
+        text-align: center;
         font-size: 9px;
         font-weight: 700;
     }
@@ -677,9 +689,6 @@ ul {
         padding-bottom: 25px;
         font-size: 17px;
         margin-right: 10px;
-        position: absolute;
-        top: 110px;
-        right: 76px;
     }
     .logo {
         width: 150px;
@@ -705,6 +714,13 @@ ul {
         justify-content: center;
         align-items: center;
     }
+    #feature .fe-box{
+        width: 46%;
+        margin: 15px 1%;
+    }
+    .section-p1 {
+        padding: 0;
+    }
 
     .container__footer {
         justify-content: center; 
@@ -714,4 +730,26 @@ ul {
         text-align: center;
         padding: 16px; 
     } 
+    .nav-item {
+        padding: 5px 0;
+    }
+    .list-group-item {
+        font-size: 14px;
+    }
+    .vertical {
+        display: none;
+    }
+    .card {
+        width: 50% !important;
+    }
+    .card-title {
+        margin-top: 15px;
+    }
+    .card-body {
+        width: 80%;
+
+    }
+    .col-sm-3 {
+        
+    }
 }
