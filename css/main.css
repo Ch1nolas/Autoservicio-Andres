@@ -192,6 +192,9 @@ body {
       text-align: center;
       padding: 0 4px;
       color: aliceblue; }
+      .footer .container__footer .box__copyright p {
+        color: aliceblue;
+        text-align: center; }
 
 .titulo {
   margin-top: 20px; }
