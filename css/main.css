@@ -48,6 +48,43 @@ body {
 .carousel-control-prev-icon {
   background-image: url(../img/svg/left-arrow.png); }
 
+.formulario-margin {
+  padding-top: 20px; }
+  .formulario-margin .formulario {
+    background-color: #757575;
+    width: 100%;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 10px; }
+    .formulario-margin .formulario fieldset {
+      border: none; }
+      .formulario-margin .formulario fieldset legend {
+        text-align: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #F4964E; }
+      .formulario-margin .formulario fieldset .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 200px;
+        column-gap: 10px; }
+        .formulario-margin .formulario fieldset .contenedor-campos .campo {
+          margin-bottom: 10px; }
+          .formulario-margin .formulario fieldset .contenedor-campos .campo label {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block; }
+          .formulario-margin .formulario fieldset .contenedor-campos .campo textarea {
+            height: 200px; }
+          .formulario-margin .formulario fieldset .contenedor-campos .campo .input-text {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 5px; }
+
 .service h2 {
   margin-top: 20px;
   text-align: center; }
