@@ -25,7 +25,7 @@ const gardarcomentario = (clave, valor) => {
 };
 
 
-const button = document.querySelector(".boton1");
+const button = document.querySelector(".boton");
 
 
 const ShowContactos = (opinion) => {
