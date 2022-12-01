@@ -3,15 +3,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $primary_color;
+    background-color: #f4964e97;
 
     .container {
         position: relative;
         max-width: 430px;
         width: 100%;
-        background-color: #fff;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 0 20px;
 
-        .active .forms {
+        .forms {
             display: flex;
             align-items: center;
             height: 440px;
@@ -29,7 +33,7 @@
                     font-size: 27px;
                     font-weight: 600;
 
-                    &:hover {
+                    &::before {
                         content: '';
                         position: absolute;
                         left: 0;
@@ -61,94 +65,116 @@
 
                         &:is(:focus, :valid) {
                             border-bottom-color: $secondary_color;
+                        }
+                    }
 
-                            &~i {
-                                color: $secondary_color;
-                            }
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #999;
+                        font-size: 23px;
+                        transition: all 0.2s ease;
+
+                        &.icon {
+                            left: 0;
                         }
 
-                        i.showHidePW {
+                        &.showHidePw {
                             right: 0;
                             cursor: pointer;
                             padding: 10px;
                         }
                     }
-                }
 
-                .checkbox-text {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 20px;
-
-                    .checkbox-content {
+                    .checkbox-text {
                         display: flex;
                         align-items: center;
+                        justify-content: space-between;
+                        margin-top: 20px;
 
-                        input {
-                            margin: 0 8px -2px 4px;
-                            accent-color: $secondary_color;
+                        .checkbox-content {
+                            display: flex;
+                            align-items: center;
+
+                            input {
+                                margin: 0 8px -2px 4px;
+                                accent-color: $secondary_color;
+                            }
                         }
 
-                        .text {
-                            color: #333;
-                            font-size: 14px;
+                    }
 
-                            a {
-                                color: $secondary_color;
-                                text-decoration: none;
+                    .text {
+                        color: #333;
+                        font-size: 14px;
 
-                                &:hover {
-                                    text-decoration: underline;
-                                }
+                        a {
+                            color: $secondary_color;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .button {
+                        margin-top: 35px;
+
+                        input {
+                            border: none;
+                            color: #fff;
+                            font-size: 17px;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            border-radius: 6px;
+                            background-color: $secondary_color;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            &:hover {
+                                background-color: #265df2;
                             }
                         }
                     }
                 }
-
-                .button {
-                    margin-top: 35px;
-
-                    input {
-                        border: none;
-                        color: #fff;
-                        font-size: 17px;
-                        font-weight: 500;
-                        letter-spacing: 1px;
-                        border-radius: 6px;
-                        background-color: $secondary_color;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-
-                        &:hover {
-                            background-color: #265df2;
-                        }
-                    }
-                }
-
-                .login-signup {
-                    margin-top: 30px;
-                    text-align: center;
-                }
             }
-
-            .active .login {
-                margin-left: -50%;
-                opacity: 0;
-                transition: margin-left 0.18s ease, opacity 0.15s ease;
+            .login-signup{
+                margin-top: 30px;
+                text-align: center;
             }
-
             .signup {
                 opacity: 0;
                 transition: opacity 0.09s ease;
             }
-
-            .active .signup {
-                opacity: 1;
-                transition: opacity 0.2s ease;
+        }
+        &:active {
+            .forms {
+                .form {
+                    .login {
+                        margin-left: -50%;
+                        opacity: 0;
+                        transition: margin-left 0.18s ease, opacity 0.15s ease;
+                    }
+                }
             }
-
         }
 
+        &:active {
+            .forms {
+                .form {
+                    .signup {
+                        opacity: 1;
+                        transition: opacity 0.2s ease;
+                    }
+                }
+            }
+        }
+
+        &:active {
+            .forms {
+                height: 600px;
+            }
+        }
     }
 }

@@ -233,28 +233,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F4964E; }
+  background-color: #f4964e97; }
   .body-register .container {
     position: relative;
     max-width: 430px;
     width: 100%;
-    background-color: #fff; }
-    .body-register .container .active .forms {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 20px; }
+    .body-register .container .forms {
       display: flex;
       align-items: center;
       height: 440px;
       width: 200%;
       transition: height 0.2s ease; }
-      .body-register .container .active .forms .form {
+      .body-register .container .forms .form {
         width: 50%;
         padding: 30px;
         background-color: #fff;
         transition: margin-left 0.18s ease; }
-        .body-register .container .active .forms .form .title {
+        .body-register .container .forms .form .title {
           position: relative;
           font-size: 27px;
           font-weight: 600; }
-          .body-register .container .active .forms .form .title:hover {
+          .body-register .container .forms .form .title::before {
             content: '';
             position: absolute;
             left: 0;
@@ -263,12 +267,12 @@ body {
             width: 30px;
             background-color: #4555A3;
             border-radius: 25px; }
-        .body-register .container .active .forms .form .input-field {
+        .body-register .container .forms .form .input-field {
           position: relative;
           height: 50px;
           width: 100%;
           margin-top: 30px; }
-          .body-register .container .active .forms .form .input-field input {
+          .body-register .container .forms .form .input-field input {
             position: absolute;
             height: 100%;
             width: 100%;
@@ -279,60 +283,69 @@ body {
             border-bottom: 2px solid #ccc;
             border-top: 2px solid transparent;
             transition: all 0.2s ease; }
-            .body-register .container .active .forms .form .input-field input:is(:focus, :valid) {
+            .body-register .container .forms .form .input-field input:is(:focus, :valid) {
               border-bottom-color: #4555A3; }
-              .body-register .container .active .forms .form .input-field input:is(:focus, :valid) ~ i {
-                color: #4555A3; }
-            .body-register .container .active .forms .form .input-field input i.showHidePW {
+          .body-register .container .forms .form .input-field i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 23px;
+            transition: all 0.2s ease; }
+            .body-register .container .forms .form .input-field i.icon {
+              left: 0; }
+            .body-register .container .forms .form .input-field i.showHidePw {
               right: 0;
               cursor: pointer;
               padding: 10px; }
-        .body-register .container .active .forms .form .checkbox-text {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-top: 20px; }
-          .body-register .container .active .forms .form .checkbox-text .checkbox-content {
+          .body-register .container .forms .form .input-field .checkbox-text {
             display: flex;
-            align-items: center; }
-            .body-register .container .active .forms .form .checkbox-text .checkbox-content input {
-              margin: 0 8px -2px 4px;
-              accent-color: #4555A3; }
-            .body-register .container .active .forms .form .checkbox-text .checkbox-content .text {
-              color: #333;
-              font-size: 14px; }
-              .body-register .container .active .forms .form .checkbox-text .checkbox-content .text a {
-                color: #4555A3;
-                text-decoration: none; }
-                .body-register .container .active .forms .form .checkbox-text .checkbox-content .text a:hover {
-                  text-decoration: underline; }
-        .body-register .container .active .forms .form .button {
-          margin-top: 35px; }
-          .body-register .container .active .forms .form .button input {
-            border: none;
-            color: #fff;
-            font-size: 17px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            border-radius: 6px;
-            background-color: #4555A3;
-            cursor: pointer;
-            transition: all 0.3s ease; }
-            .body-register .container .active .forms .form .button input:hover {
-              background-color: #265df2; }
-        .body-register .container .active .forms .form .login-signup {
-          margin-top: 30px;
-          text-align: center; }
-      .body-register .container .active .forms .active .login {
-        margin-left: -50%;
-        opacity: 0;
-        transition: margin-left 0.18s ease, opacity 0.15s ease; }
-      .body-register .container .active .forms .signup {
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px; }
+            .body-register .container .forms .form .input-field .checkbox-text .checkbox-content {
+              display: flex;
+              align-items: center; }
+              .body-register .container .forms .form .input-field .checkbox-text .checkbox-content input {
+                margin: 0 8px -2px 4px;
+                accent-color: #4555A3; }
+          .body-register .container .forms .form .input-field .text {
+            color: #333;
+            font-size: 14px; }
+            .body-register .container .forms .form .input-field .text a {
+              color: #4555A3;
+              text-decoration: none; }
+              .body-register .container .forms .form .input-field .text a:hover {
+                text-decoration: underline; }
+          .body-register .container .forms .form .input-field .button {
+            margin-top: 35px; }
+            .body-register .container .forms .form .input-field .button input {
+              border: none;
+              color: #fff;
+              font-size: 17px;
+              font-weight: 500;
+              letter-spacing: 1px;
+              border-radius: 6px;
+              background-color: #4555A3;
+              cursor: pointer;
+              transition: all 0.3s ease; }
+              .body-register .container .forms .form .input-field .button input:hover {
+                background-color: #265df2; }
+      .body-register .container .forms .login-signup {
+        margin-top: 30px;
+        text-align: center; }
+      .body-register .container .forms .signup {
         opacity: 0;
         transition: opacity 0.09s ease; }
-      .body-register .container .active .forms .active .signup {
-        opacity: 1;
-        transition: opacity 0.2s ease; }
+    .body-register .container:active .forms .form .login {
+      margin-left: -50%;
+      opacity: 0;
+      transition: margin-left 0.18s ease, opacity 0.15s ease; }
+    .body-register .container:active .forms .form .signup {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    .body-register .container:active .forms {
+      height: 600px; }
 
 @media (max-width: 1440px) {
   #header .navegacion .logo {
