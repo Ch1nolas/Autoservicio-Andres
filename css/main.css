@@ -474,6 +474,8 @@ body {
       margin: 15px 1%; }
   .service .section-p1 {
     padding: 0; }
+  .formulario-margin .formulario fieldset .contenedor-campos {
+    display: block; }
   .footer .container__footer {
     justify-content: center;
     align-items: center;
