@@ -36,17 +36,16 @@
             border-left: 2px solid aliceblue;
             height: 200px;
         }
-        .box__copyright {
-            max-width: 1200px;
-            margin: auto;
-            text-align: center;
-            padding: 0 4px;
+    }
+    .box__copyright {
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+        padding: 0 4px;
+        color: aliceblue;
+        p {
             color: aliceblue;
-            p {
-                color: aliceblue;
-                text-align: center;
-            }
+            text-align: center;
         }
     }
-
 }
