@@ -217,16 +217,20 @@ body {
       text-align: center; }
 
 .titulo {
-  margin-top: 20px; }
+  margin-top: 20px;
+  padding-bottom: 10px; }
 
-.nosotros p {
-  margin: 15px 20px 15px 20px; }
-
-.nosotros .center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px; }
+.nosotros {
+  display: contents; }
+  .nosotros p {
+    margin: 15px 40px 15px 20px;
+    padding: 10px 100px;
+    font-size: 20px; }
+  .nosotros .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; }
 
 .body-register {
   height: 100vh;
