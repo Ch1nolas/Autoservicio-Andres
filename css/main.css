@@ -422,7 +422,7 @@ body {
     .footer .container__footer .box__footer {
       padding: 72px; } }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   #header {
     padding: 10px 14px; }
     #header .navegacion {
@@ -495,4 +495,7 @@ body {
     .card .card-body {
       width: 80%; }
       .card .card-body .card-title {
-        margin-top: 15px; } }
+        margin-top: 15px; }
+  .nosotros p {
+    margin: 15px 15px 15px 25px;
+    padding: 10px 25px; } }
