@@ -151,29 +151,29 @@
                         font-size: 13px;
                         padding: 5px 0;
                     }
-                    .searchbar-container {
-                        display: flex;
-                        order: 5;        
-                        .bar_search {
-                            width: 185px;
-                            height: 25px;
-                            border-top-left-radius: 15px;
-                            border-bottom-left-radius: 15px;
-                            &::placeholder {
-                                align-items: center;
-                                text-align: center;
-                                font-size: 9px;
-                                font-weight: 700;
-                            }
-                        }        
-                        .button_search {
-                            height: 9px;
-                            padding-bottom: 25px;
-                            font-size: 17px;
-                            margin-right: 10px;
+                }
+                .searchbar-container {
+                    display: flex;
+                    order: 5;        
+                    .bar_search {
+                        width: 185px;
+                        height: 25px;
+                        border-top-left-radius: 15px;
+                        border-bottom-left-radius: 15px;
+                        &::placeholder {
+                            align-items: center;
+                            text-align: center;
+                            font-size: 9px;
+                            font-weight: 700;
                         }
-                        
+                    }        
+                    .button_search {
+                        height: 9px;
+                        padding-bottom: 25px;
+                        font-size: 17px;
+                        margin-right: 10px;
                     }
+                    
                 }
                 .nav-item {
                     padding: 5px 0;
@@ -240,6 +240,9 @@
         
     }
     .nosotros {
+        .nosotros__img {
+            width: 300px;
+        }
         p {
             margin: 15px 15px 15px 25px;
             padding: 10px 25px;
