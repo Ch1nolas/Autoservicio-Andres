@@ -1,3 +1,6 @@
+//Lo que hace este archivo es que cuando se completa el formulario del contato y tiene los siguientes datos Nombre, Correo y Mensaje, lo que hice fue que estos datos los guardara en el localStorage, y luego extrajera el mensaje y que lo imprima como un párrafo que fuera las opiniones de la página. 
+
+
 class Contacto {
     constructor(id, usuario, correo, mensaje){
         this.id = +(id)
