@@ -4,42 +4,49 @@ const baseDeDatos = [
         "id": 1,
         "nombre": "Molida Intermedia",
         "precio": "$ 699",
+        "categoria": "Carnes",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/672125-800-auto?v=637703409949200000&width=800&height=auto&aspect=true"
     },
     {
         "id":2,
         "nombre": "Vino Tetra Arizu",
         "precio": "$ 199",
+        "categoria": "Carnes",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/568693-800-auto?v=637149145148370000&width=800&height=auto&aspect=true"
     },
     {
         "id":3,
         "nombre": "Pure de tomates",
         "precio": "$ 99",
+        "categoria": "Mercado",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/711891-800-auto?v=637943710476600000&width=800&height=auto&aspect=true"
     },
     {
         "id":4,
         "nombre": "Cerveza Stella Astois",
         "precio": "$ 400",
+        "categoria": "Alcohol",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/685563-800-auto?v=637786570144800000&width=800&height=auto&aspect=true"
     },
     {
         "id":5,
         "nombre": "Dr Lemon V/Sabores",
         "precio": "$ 299",
+        "categoria": "Alcohol",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/199651-800-auto?v=636383613451830000&width=800&height=auto&aspect=true"
     },
     {
-        "id":5,
+        "id":6,
         "nombre": "Dr Lemon V/Sabores",
         "precio": "$ 299",
+        "categoria": "Alcohol",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/199651-800-auto?v=636383613451830000&width=800&height=auto&aspect=true"
     },
     {
-        "id":5,
-        "nombre": "Dr Lemon V/Sabores",
+        "id":7,
+        "nombre": "Dr Lemon Mojito",
         "precio": "$ 299",
+        "categoria": "Alcohol",
         "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/199651-800-auto?v=636383613451830000&width=800&height=auto&aspect=true"
     },
     
@@ -54,36 +61,27 @@ const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 
 // Funciones
 
-/**
- * Aperecen los productos en la página
- */
+//Card en el HTML
 function renderizarProductos() {
     baseDeDatos.forEach((info) => {
-        // Estructura
         const miNodo = document.createElement('div');
         miNodo.classList.add('card', 'col-sm-3');
-        // Body
         const miNodoCardBody = document.createElement('div');
         miNodoCardBody.classList.add('card-body');
-        // Titulo
         const miNodoTitle = document.createElement('h5');
         miNodoTitle.classList.add('card-title');
         miNodoTitle.textContent = info.nombre;
-        // Imagen
         const miNodoImagen = document.createElement('img');
         miNodoImagen.classList.add('img-fluid');
         miNodoImagen.setAttribute('src', info.imagen);
-        // Precio
         const miNodoPrecio = document.createElement('p');
         miNodoPrecio.classList.add('card-text');
         miNodoPrecio.textContent = `${info.precio}${divisa}`;
-        // Boton 
         const miNodoBoton = document.createElement('button');
         miNodoBoton.classList.add('btn', 'btn-primary');
         miNodoBoton.textContent = '+ Agregar al carrito';
         miNodoBoton.setAttribute('marcador', info.id);
         miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
-        // Insertamos
         miNodoCardBody.appendChild(miNodoImagen);
         miNodoCardBody.appendChild(miNodoTitle);
         miNodoCardBody.appendChild(miNodoPrecio);
@@ -93,38 +91,24 @@ function renderizarProductos() {
     });
 }
 
-/**
- * Evento para añadir un producto al carrito de la compra
- */
+/* Evento para añadir un producto al carrito de la compra */
 function añadirProductoAlCarrito(evento) {
-    // Añadimos el Nodo a nuestro carrito
     carrito.push(evento.target.getAttribute('marcador'))
-    // Actualizamos el carrito 
     renderizarCarrito();
 
 }
 
-/**
- * Dibuja todos los productos guardados en el carrito
- */
+/* Dibuja todos los productos guardados en el carrito */
 function renderizarCarrito() {
-    // Vaciamos todo el html
     DOMcarrito.textContent = '';
-    // Quitamos los duplicados
     const carritoSinDuplicados = [...new Set(carrito)];
-    // Generamos los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
-        // Obtenemos el item que necesitamos de la variable base de datos
         const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            // ¿Coincide las id? Solo puede existir un caso
             return itemBaseDatos.id === parseInt(item);
         });
-        // Cuenta el número de veces que se repite el producto
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
         }, 0);
-        // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-5', 'dropdown-item', 'd-flex');
         miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
@@ -139,46 +123,23 @@ function renderizarCarrito() {
         miNodo.appendChild(miBoton);
         DOMcarrito.appendChild(miNodo);
     });
-    // Renderizamos el precio total en el HTML
     DOMtotal.textContent = calcularTotal();
 }
 
-/**
- * Evento para borrar un elemento del carrito
- */
+//Evento pora borrar item del carrito
 function borrarItemCarrito(evento) {
-    // Obtenemos el producto ID que hay en el boton pulsado
     const id = evento.target.dataset.item;
-    // Borramos todos los productos
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-    // volvemos a renderizar
     renderizarCarrito();
 }
 
-/**
- * Calcula el precio total teniendo en cuenta los productos repetidos
- */
-function calcularTotal() {
-    // Recorremos el array del carrito 
-    return carrito.reduce((total, item) => {
-        // De cada elemento obtenemos su precio
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
-        });
-        // Los sumamos al total
-        return total + miItem[0].precio;
-    }, 0).toFixed(2);
-}
 
-/**
- * Vacia el carrito y vuelve a dibujarlo
- */
+
+//Vaciar carrito
 function vaciarCarrito() {
-    // Limpiamos los productos guardados
     carrito = [];
-    // Renderizamos los cambios
     renderizarCarrito();
 }
 
