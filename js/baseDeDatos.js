@@ -56,7 +56,6 @@ let carrito = [];
 const divisa = '';
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
-const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 
 // Funciones
@@ -91,14 +90,14 @@ function renderizarProductos() {
     });
 }
 
-/* Evento para añadir un producto al carrito de la compra */
+//Evento añadir al carrito
 function añadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'))
     renderizarCarrito();
 
 }
 
-/* Dibuja todos los productos guardados en el carrito */
+//Renderizado de productos dentro del carrito
 function renderizarCarrito() {
     DOMcarrito.textContent = '';
     const carritoSinDuplicados = [...new Set(carrito)];
