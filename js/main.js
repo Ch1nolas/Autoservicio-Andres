@@ -3,15 +3,22 @@ console.log("Hola Mundo!");
 let carrito = [];
 const DOMcarrito = document.querySelector("#carrito");
 
-// busqueda de categorias
+fetch("./js/data/productos.json")
+  .then(Response => Response.json())
+  .then(data => {
+    console.log(data);
+  })
 
-function categorias() {
+
+// busqueda de categorias
+/* function categorias() {
   const resultado = prompt("Ingrese la categoria que quiere buscar");
   const categoria = BDD.filter((el) => el.categoria.includes(resultado));
   console.log(categoria);
   RenderProductos(categoria);
-}
-//lsito
+} */
+
+//Listo
 function RenderProductos() {
   const productos = document.querySelector("#productos");
   productos.classList.add("ofertas");
@@ -64,7 +71,7 @@ function renderizarCarrito(producto) {
   li.innerHTML += `${producto.nombre}: $ ${producto.precio}`;
   item.appendChild(li);
 }
-
+//listo
 function TotalCarrito() {
   const totalP = document.getElementById("total");
   const total = carrito.reduce((acc, el) => acc + el.precio, 0);
